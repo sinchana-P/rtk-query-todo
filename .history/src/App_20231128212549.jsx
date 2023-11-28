@@ -1,10 +1,12 @@
-import TodoList from './features/todos/TodoList'
+i
 import './App.css'
 
 function App() {
 
   return (
-    <TodoList />
+    <>
+      hi
+    </>
   )
 }
 
