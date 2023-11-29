@@ -51,5 +51,4 @@ export const {
 // Reason No CRUD operation in working:
 // 1. Results get cached
 // 2. we're not invalidating the previous cache
-// 3. So it's not updating to show the new changes whether it's delete or update or add new-todo list.
-// bcz, we r still seeing the cached version of the data.
+// 3. So it's not updating to show the new changes whether it's delete or update or 
