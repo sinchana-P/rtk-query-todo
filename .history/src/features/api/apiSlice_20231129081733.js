@@ -7,7 +7,7 @@ export const apiSlice = createApi({
     endpoints: (builder) => ({
         getTodos: builder.query({
             query: () => '/todos',        // anonymous function // '/todos' will be attached to the baseUrl
-            providesTags: ['Todos']       // say, it's providing this tag of todo's. 
+            providesTags: ['Todos']         
         }),
         addTodo: builder.mutation({
             query: (todo) => ({         // "todo" is specified, coz it needs a new todo.
@@ -15,7 +15,7 @@ export const apiSlice = createApi({
                 method: 'POST',
                 body: todo
             }),
-            invalidatesTags: ['Todos']      //
+            invalidatesTags: ['Todos']
         }),
         updateTodo: builder.mutation({
             query: (todo) => ({

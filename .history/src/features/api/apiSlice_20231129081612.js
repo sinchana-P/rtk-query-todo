@@ -3,11 +3,11 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 export const apiSlice = createApi({
     reducerPath: 'api',         // default
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3500' }),
-    tagTypes: ['Todos'],        // name the tag
+    tagTypes: ['Todos'],
     endpoints: (builder) => ({
         getTodos: builder.query({
             query: () => '/todos',        // anonymous function // '/todos' will be attached to the baseUrl
-            providesTags: ['Todos']       // say, it's providing this tag of todo's. 
+            providesTags: ['Todos']
         }),
         addTodo: builder.mutation({
             query: (todo) => ({         // "todo" is specified, coz it needs a new todo.
@@ -15,7 +15,7 @@ export const apiSlice = createApi({
                 method: 'POST',
                 body: todo
             }),
-            invalidatesTags: ['Todos']      //
+            invalidatesTags: ['Todos']
         }),
         updateTodo: builder.mutation({
             query: (todo) => ({
@@ -60,7 +60,6 @@ export const {
 // bcz, we r still seeing the cached version of the data.
 
 // To FIX:
-// 1. Assign a tag to the cache.
+// 1. Assign a tag to the cache
 // 2. And let it know which mutations invalidate the cache
-// 3. and so, it will automatically refetch the data for us.
-// 
+// 3. and so, it will automatically refetch 
