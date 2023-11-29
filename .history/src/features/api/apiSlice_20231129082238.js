@@ -7,8 +7,6 @@ export const apiSlice = createApi({
     endpoints: (builder) => ({
         getTodos: builder.query({
             query: () => '/todos',        // anonymous function // '/todos' will be attached to the baseUrl
-            // To sort the response in reverse order
-            transformResponse: res => res.sort((a, b) => b.id - a.id),
             providesTags: ['Todos']       // say, it's providing this tag of todo's. 
         }),
         addTodo: builder.mutation({
@@ -17,7 +15,7 @@ export const apiSlice = createApi({
                 method: 'POST',
                 body: todo
             }),
-            invalidatesTags: ['Todos']      // invalidate the todo's cache.
+            invalidatesTags: ['Todos']      // invalidate the todo's cache
         }),
         updateTodo: builder.mutation({
             query: (todo) => ({

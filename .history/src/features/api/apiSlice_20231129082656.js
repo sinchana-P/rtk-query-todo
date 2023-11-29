@@ -6,9 +6,8 @@ export const apiSlice = createApi({
     tagTypes: ['Todos'],        // name the tag.
     endpoints: (builder) => ({
         getTodos: builder.query({
-            query: () => '/todos',        // anonymous function // '/todos' will be attached to the baseUrl
-            // To sort the response in reverse order
-            transformResponse: res => res.sort((a, b) => b.id - a.id),
+            query: () => '/todos',
+            // anonymous function // '/todos' will be attached to the baseUrl
             providesTags: ['Todos']       // say, it's providing this tag of todo's. 
         }),
         addTodo: builder.mutation({
